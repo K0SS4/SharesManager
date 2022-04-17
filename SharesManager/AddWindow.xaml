@@ -1,0 +1,21 @@
+﻿<Window x:Class="SharesManager.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SharesManager"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="300" Width="400">
+    <Grid>
+        <Label Content="Name" Margin="0,5,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="400" Height="30"/>
+        <TextBox Name="XtextName" Margin="0,30,0,0" KeyDown="EnterPressed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="200" Height="25"/>
+        <Label Content="Ip" Margin="0,55,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="400" Height="30"/>
+        <TextBox Name="XtextIp" Margin="0,80,0,0" KeyDown="EnterPressed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="200" Height="25"/>
+        <Label Content="Share" Margin="0,105,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="400" Height="30"/>
+        <TextBox Name="XtextShare" Margin="0,130,0,0" KeyDown="EnterPressed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="200" Height="25"/>
+        <Label Content="Vpn" Margin="0,155,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="400" Height="30"/>
+        <CheckBox Name="XcheckVpn" Margin="0,180,0,0" KeyDown="EnterPressed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14"/>
+
+        <Button Name="XbuttonAdd" Content="Add" Width="40" Height="25" Margin="0,220,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="XbuttonAdd_Click"/>
+    </Grid>
+</Window>

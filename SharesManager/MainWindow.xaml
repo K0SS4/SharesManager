@@ -1,0 +1,28 @@
+﻿<Window x:Class="SharesManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SharesManager"
+        mc:Ignorable="d"
+        Icon="Images/icon.ico"
+        Title="Shares Manager" Height="500" MinHeight="500" MaxHeight="500" Width="800" MinWidth="800" MaxWidth="800">
+    <Grid>
+        <Button Name="XbuttonAdd" Content="Add" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="70" Click="XbuttonAdd_Click"/>
+        <Button Name="XbuttonEdit" Content="Edit" Margin="100,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="70" Click="XbuttonEdit_Click"/>
+        <Button Name="XbuttonRemove" Content="Remove" Margin="180,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="70" Click="XbuttonRemove_Click"/>
+        <Button Name="XbuttonOpen" Content="Open" Margin="260,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="70" Click="XbuttonOpen_Click"/>
+        <DataGrid Name="XdataShares" SelectedIndex="0" Margin="0,120,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" MouseDoubleClick="XdataShares_OnMouseDoubleClick" ItemsSource="{Binding Shares}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="300" FontSize="16">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="CornflowerBlue"/>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" MinWidth="30" Width="50"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="30" Width="250"/>
+                <DataGridTextColumn Header="Ip" Binding="{Binding Ip}" MinWidth="30" Width="200"/>
+                <DataGridTextColumn Header="Share" Binding="{Binding Share}" MinWidth="30" Width="150"/>
+                <DataGridCheckBoxColumn Header="VPN" Binding="{Binding Vpn}" MinWidth="30" Width="42"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
