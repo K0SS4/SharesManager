@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
@@ -44,10 +45,29 @@ namespace SharesManager
         private void XbuttonOpen_Click(object sender, RoutedEventArgs e)
         {
             if (XdataShares.SelectedIndex == -1) return;
-
             int index = XdataShares.SelectedIndex;
+
+            Ping ping = new Ping();
+            PingReply reply = ping.Send(Shares[index].Ip);
+
+            if (reply.Status != IPStatus.Success)
+            {
+                if (MessageBox.Show("Machine with that IP seems offline.\nWould you like to try to connect anyway",
+                        "Destination unreachable", MessageBoxButton.YesNo, MessageBoxImage.Error) ==
+                    MessageBoxResult.No)
+                {
+                    return;
+                }
+            }
+
             string path = "\\\\" + Shares[index].Ip + "\\" + Shares[index].Share;
-            Process.Start("cmd.exe","/C start " + path);
+            ProcessStartInfo info = new ProcessStartInfo
+            {
+                WindowStyle = ProcessWindowStyle.Hidden,
+                FileName = "cmd.exe",
+                Arguments = "/C start " + path
+            };
+            Process.Start(info);
         }
 
         private void XbuttonEdit_Click(object sender, RoutedEventArgs e)

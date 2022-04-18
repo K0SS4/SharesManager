@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SharesManager"
         mc:Ignorable="d"
-        Title="AddWindow" Height="300" Width="400">
+        Title="AddWindow" Height="300" MinHeight="300" MaxHeight="300" Width="400" MinWidth="400" MaxWidth="400">
     <Grid>
         <Label Content="Name" Margin="0,5,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="400" Height="30"/>
         <TextBox Name="XtextName" Margin="0,30,0,0" KeyDown="EnterPressed" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14" Width="200" Height="25"/>
