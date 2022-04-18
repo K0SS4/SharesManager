@@ -47,14 +47,7 @@ namespace SharesManager
 
             int index = XdataShares.SelectedIndex;
             string path = "\\\\" + Shares[index].Ip + "\\" + Shares[index].Share;
-            Process.Start("explorer.exe", path);
-            /*System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startInfo.FileName = "explorer.exe";
-            startInfo.Arguments = path;
-            process.StartInfo = startInfo;
-            process.Start();*/
+            Process.Start("cmd.exe","/C start " + path);
         }
 
         private void XbuttonEdit_Click(object sender, RoutedEventArgs e)
